@@ -1,0 +1,44 @@
+@use "../abstract/" as *;
+@use "../base/" as *;
+
+.header{
+    padding: 1.5rem;
+    .branding{
+       @include flexbetween;
+       a#DL{
+        display: none;
+       }
+    }
+    &_actions{
+        display: none;
+        margin:2rem 0;
+        justify-content: space-between;
+        ul.header_nav{
+            text-align: center; 
+            gap:2rem;
+            li{
+                font-size: 1.5rem;
+            }
+    }
+}
+
+@include mediaquery($break-lg) {
+    .toggle_menu{
+        display: none;
+    }
+    &_actions{
+        display: flex;
+
+        ul.header_nav{
+        display:flex;
+    }
+}
+    .branding{
+        a#DL{ 
+            display:flex;
+        }
+    }
+    
+    }
+}
+
